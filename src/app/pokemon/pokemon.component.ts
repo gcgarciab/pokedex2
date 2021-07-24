@@ -10,6 +10,7 @@ import { PokemonService } from '../pokemon.service';
 export class PokemonComponent implements OnInit {
 
   pokemonInfo!: any;
+  image: any;
 
   constructor(
     private pokemonService: PokemonService, 
@@ -24,6 +25,8 @@ export class PokemonComponent implements OnInit {
       this.pokemonService.getPokemonById(+id)
         .subscribe(data => {
           this.pokemonInfo = data;
+          this.image = data.sprites.front_default;
+          console.log(this.image);
           console.log(data);
         })
     }
