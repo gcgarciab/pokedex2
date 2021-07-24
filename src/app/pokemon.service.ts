@@ -16,4 +16,11 @@ export class PokemonService {
       headers: this.headers
     });
   }
+
+  getPokemons(): Observable<any> {
+    return this.http.get('https://pokeapi.co/api/v2/pokemon/', {
+      headers: this.headers
+    });
+  }
+  
 }
